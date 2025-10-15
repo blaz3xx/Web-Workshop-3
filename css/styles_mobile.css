@@ -14,6 +14,7 @@ html, body {
     line-height: 1.6;
 }
 
+
 .container {
     display: flex;
     flex-direction: column;
@@ -26,16 +27,19 @@ html, body {
 
 .main-layout {
     display: flex;
+    flex-direction: row;
     flex-grow: 1; 
     gap: 14px;
 }
 
 .content-columns {
+    flex: 1;
     flex-basis: calc(100% * 3.2 / 4.2);
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
     gap: 8px;
+    
 }
 
 .row-1-block1 {
@@ -71,7 +75,7 @@ html, body {
     border: 1px solid #bdbdbd;
     background: white;
     position: relative;
-    overflow: visible;
+    overflow: hidden;
     overflow-wrap: break-word;
     hyphens: auto;
     min-height: 100px;
@@ -95,7 +99,6 @@ html, body {
     flex-shrink: 0;
     background-color: #e3efd9;
     flex-grow: 1;
-		
 }
 
 .block3 {
@@ -107,14 +110,12 @@ html, body {
 .block4 {
     background-color: #fbe3d1;
     align-items: flex-start;
-		
 }
 
 .block4 h2 {
     font-size: clamp(18px, 2vw, 24px);
     margin: .25rem 0 .5rem;
     text-align: center;
-		
 }
 
 .block5 {
@@ -203,11 +204,7 @@ html, body {
     margin: .4rem 0;
 }
 
-.content ul {
-    margin-left: 2.5rem;
-}
-
-.content ol {
+.content ul, .content ol {
     margin-left: 2.5rem;
 }
 
@@ -269,13 +266,47 @@ html, body {
     color: #0d47a1;
 }
 
-@media (max-width: 1300px) {
-    .container {
-        gap: 6px;
-        padding: 6px;
+@media (max-width: 1024px) {
+    .main-layout,
+    .row-2-3-content {
+        flex-direction: column;
     }
 
-    .block {
-        padding: 10px;
+    .content-columns,
+    .block2,
+    .column-left,
+    .column-center {
+        flex-basis: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .block1, .block6 {
+        flex-direction: column;
+        text-align: center;
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .block1 img {
+        height: 100px;
+    }
+    
+    .block5 img {
+        float: none;
+        display: block;
+        margin: 12px auto;
+        max-width: 90%;
+        height: auto;
+    }
+
+    .container {
+        padding: 6px;
+        gap: 6px;
+    }
+    
+    .main-layout {
+        gap: 10px;
     }
 }
