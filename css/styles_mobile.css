@@ -7,39 +7,35 @@
 html, body {
     min-height: 100vh;
     font-size: clamp(16px, 1.5vw, 20px);
-    overflow: auto;
+    overflow-x: hidden; 
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
     color: #222;
     background: #fafafa;
     line-height: 1.6;
 }
 
-
 .container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    min-width: 1250px;
-    width: max(1250px, 100%);
+    width: 100%;
+    margin: 0 auto;
     gap: 8px;
     padding: 8px;
 }
 
 .main-layout {
     display: flex;
-    flex-direction: row;
     flex-grow: 1; 
     gap: 14px;
 }
 
 .content-columns {
-    flex: 1;
     flex-basis: calc(100% * 3.2 / 4.2);
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    
 }
 
 .row-1-block1 {
