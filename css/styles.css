@@ -6,7 +6,7 @@
 
 html, body {
     min-height: 100vh;
-    font-size: clamp(16px, 1.5vw, 20px);
+    font-size: clamp(14px, 2.2vw, 20px);
     overflow: auto;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
     color: #222;
@@ -14,32 +14,21 @@ html, body {
     line-height: 1.6;
 }
 
-/* === ГОЛОВНИЙ КОНТЕЙНЕР === */
 .container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-
-    /* 🔧 Тримає ширину макету постійною і не дає колонкам ламатись */
-    min-width: 1250px;
-    width: max(1250px, 100%);
-    overflow-x: auto; /* якщо екран вузький — з’явиться горизонтальний скрол */
-
+    width: 100%;
     gap: 8px;
     padding: 8px;
 }
 
-/* === ОСНОВНА СІТКА === */
 .main-layout {
     display: flex;
-    flex-grow: 1;
+    flex-grow: 1; 
     gap: 14px;
-
-    /* 🔧 Не дозволяє колонкам переноситися вниз */
-    flex-wrap: nowrap;
 }
 
-/* === КОЛОНКИ === */
 .content-columns {
     flex-basis: calc(100% * 3.2 / 4.2);
     flex-shrink: 0;
@@ -57,9 +46,6 @@ html, body {
     display: flex;
     flex-grow: 1;
     gap: 8px;
-
-    /* 🔧 Не дає блокам ставати вертикально */
-    flex-wrap: nowrap;
 }
 
 .column-left {
@@ -77,7 +63,6 @@ html, body {
     gap: 8px;
 }
 
-/* === БЛОКИ === */
 .block {
     display: flex;
     justify-content: center;
@@ -280,12 +265,10 @@ html, body {
     color: #0d47a1;
 }
 
-/* === НЕ ЛАМАЄ СТРУКТУРУ НА МОБІЛЬНОМУ === */
 @media (max-width: 1300px) {
     .container {
         gap: 6px;
         padding: 6px;
-        min-width: 1250px; /* 🔧 не дозволяє "стискати" контейнер */
     }
 
     .block {
