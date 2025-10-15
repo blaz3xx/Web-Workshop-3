@@ -7,21 +7,19 @@
 html, body {
     min-height: 100vh;
     font-size: clamp(16px, 1.5vw, 20px);
-    overflow-x: hidden; /* Запобігає випадковій горизонтальній прокрутці */
+    overflow: auto;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
     color: #222;
     background: #fafafa;
     line-height: 1.6;
 }
 
-/* --- ЗМІНЕНО --- */
 .container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    width: 100%;
-    max-width: 1350px; /* Обмежуємо максимальну ширину на великих екранах */
-    margin: 0 auto;     /* Центруємо контейнер */
+    min-width: 1250px;
+    width: max(1250px, 100%);
     gap: 8px;
     padding: 8px;
 }
@@ -73,7 +71,7 @@ html, body {
     border: 1px solid #bdbdbd;
     background: white;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     overflow-wrap: break-word;
     hyphens: auto;
     min-height: 100px;
@@ -97,6 +95,7 @@ html, body {
     flex-shrink: 0;
     background-color: #e3efd9;
     flex-grow: 1;
+		
 }
 
 .block3 {
@@ -108,12 +107,14 @@ html, body {
 .block4 {
     background-color: #fbe3d1;
     align-items: flex-start;
+		
 }
 
 .block4 h2 {
     font-size: clamp(18px, 2vw, 24px);
     margin: .25rem 0 .5rem;
     text-align: center;
+		
 }
 
 .block5 {
@@ -202,7 +203,11 @@ html, body {
     margin: .4rem 0;
 }
 
-.content ul, .content ol {
+.content ul {
+    margin-left: 2.5rem;
+}
+
+.content ol {
     margin-left: 2.5rem;
 }
 
@@ -272,56 +277,5 @@ html, body {
 
     .block {
         padding: 10px;
-    }
-}
-/* ================================================= */
-/* ==  КОД ДЛЯ АДАПТАЦІЇ ПІД МОБІЛЬНІ ПРИСТРОЇ   == */
-/* ================================================= */
-@media (max-width: 800px) {
-    /* Скидаємо жорстку ширину контейнера */
-    .container {
-        min-width: 100%;
-        width: 100%;
-        padding: 4px;
-        gap: 6px;
-    }
-
-    /* Всі основні блоки-колонки ставимо один під одним */
-    .main-layout,
-    .row-1-block1,
-    .row-2-3-content {
-        flex-direction: column;
-        gap: 6px;
-    }
-    
-    /* Скидаємо ширину колонок, бо вони тепер у стовпчик */
-    .content-columns,
-    .column-left,
-    .column-center,
-    .block2 {
-        flex-basis: auto; /* Дозволяє блоку зайняти потрібний розмір */
-    }
-
-    /* Покращуємо читабельність тексту в блоках */
-    .block {
-        align-items: flex-start; /* Вирівнюємо контент по верху */
-        text-align: left; /* Вирівнюємо текст по лівому краю */
-    }
-    
-    /* Покращуємо вигляд блоку з фото */
-    .block1, .block6 {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 16px;
-    }
-    
-    /* Прибираємо обтікання для зображення, центруємо його */
-    .block5 img {
-        float: none;
-        display: block;
-        margin: 12px auto; /* Відступи зверху/знизу та авто по боках для центрування */
-        max-width: 90%; /* Обмежуємо ширину, щоб не прилипало до країв */
-        height: auto;
     }
 }
