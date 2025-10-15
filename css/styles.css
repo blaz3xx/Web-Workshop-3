@@ -279,54 +279,13 @@ html, body {
         padding: 10px;
     }
 }
-/* ================================================= */
-/* ==  КОД ДЛЯ АДАПТАЦІЇ ПІД МОБІЛЬНІ ПРИСТРОЇ   == */
-/* ================================================= */
-@media (max-width: 800px) {
-    /* Скидаємо жорстку ширину контейнера */
-    .container {
-        min-width: 100%;
-        width: 100%;
-        padding: 4px;
-        gap: 6px;
+@media screen and (max-width: 1100px) {
+    body {
+        min-width: 350px !important;
     }
 
-    /* Всі основні блоки-колонки ставимо один під одним */
-    .main-layout,
-    .row-1-block1,
-    .row-2-3-content {
-        flex-direction: column;
-        gap: 6px;
-    }
-    
-    /* Скидаємо ширину колонок, бо вони тепер у стовпчик */
-    .content-columns,
-    .column-left,
-    .column-center,
-    .block2 {
-        flex-basis: auto; /* Дозволяє блоку зайняти потрібний розмір */
-    }
-
-    /* Покращуємо читабельність тексту в блоках */
-    .block {
-        align-items: flex-start; /* Вирівнюємо контент по верху */
-        text-align: left; /* Вирівнюємо текст по лівому краю */
-    }
-    
-    /* Покращуємо вигляд блоку з фото */
-    .block1, .block6 {
-        flex-direction: column;
-        align-items: center;
+    #row_container, #block1, #block7, #block5_main {
+        flex-direction: column !important;
         text-align: center;
-        padding: 16px;
-    }
-    
-    /* Прибираємо обтікання для зображення, центруємо його */
-    .block5 img {
-        float: none;
-        display: block;
-        margin: 12px auto; /* Відступи зверху/знизу та авто по боках для центрування */
-        max-width: 90%; /* Обмежуємо ширину, щоб не прилипало до країв */
-        height: auto;
     }
 }
